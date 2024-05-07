@@ -1,6 +1,6 @@
 ---
-namespace: tychart
-name: my_collection
+namespace: vmware
+name: vmware_rest
 readme: README.md
 version: 4.0.0-dev0
 authors:
