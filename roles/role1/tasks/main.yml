@@ -1,1 +1,3 @@
 ---
+- ansible.builtin.debug:
+    msg: "They're onto me!"
