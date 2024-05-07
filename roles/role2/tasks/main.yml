@@ -1,0 +1,25 @@
+- set_fact:
+    counter: 1
+
+- set_fact:
+    counter: "{{ num }}"
+  when: num is defined
+
+- set_fact:
+    addresses: []
+    result: ""
+    range: "11-252"
+    bytes: "{{ subnet.split('.') }}"
+
+- set_fact:
+    prefix: "{{ bytes[0] + '.' + bytes[1] + '.' + bytes[2] + '.' }}"
+
+- name: Create {{ counter }} servers in {{ subnet }}
+  include: get_next_ip.yml
+  with_sequence: start=0 end={{ counter | int - 1 }}
+
+- debug:
+    msg: "{{ addresses }}"
+
+- set_fact:
+    ipaddr: "{{ addresses[0] }}"
