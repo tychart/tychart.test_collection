@@ -1,11 +1,5 @@
 ---
 namespace: vmware
 name: vmware_rest
-#readme: README.md
-#version: 4.0.0-dev0
-#authors:
- # - Ansible (https://github.com/ansible)
-#description: VMware collection for Ansible
-#license_file: LICENSE
-dependencies:
-  cloud.common: ">=3.0.0,<4.0.0"
+#dependencies:
+  #cloud.common: ">=3.0.0,<4.0.0"
