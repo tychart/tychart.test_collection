@@ -1,0 +1,15 @@
+- name: Get next available IP in {{ subnet }}
+  set_fact:
+    result: "{{ prefix }}{{ suffix }}:{{ lookup('dig', prefix + suffix + '/PTR') }}"
+  when: 'not "NXDOMAIN" in result'
+  with_sequence: "{{ range }}"
+  loop_control:
+    loop_var: suffix
+
+- set_fact:
+    addresses: "{{ addresses + [ result.split(':') | first ] }}"
+
+- set_fact:
+    counter: "{{ counter | int - 1 }}"
+    range: "{{ ((result.split(':') | first) | split('.') | last) | int + 1 }}-252"
+    result: ""
