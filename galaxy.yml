@@ -1,5 +1,10 @@
 ---
 namespace: tychart
 name: test_collection
+authors:
+  - Ryan Gladden (gladdenr@byu.edu)
+  - Tyler Chartrand (tychart@byu.edu)
+readme: README.md
+version: 1.0.0
 #dependencies:
   #cloud.common: ">=3.0.0,<4.0.0"
